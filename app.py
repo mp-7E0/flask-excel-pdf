@@ -10,7 +10,7 @@ UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Azure Blob Storage configuration
-AZURE_STORAGE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=storagefrontend;AccountKey=QcqB/SGawtZU5hKgZOOFvYSvvjIdGcYbymA8XRff0hAF07+h8QgtrXCJXd+n67E53WE/S4LG+ESF+AStxOKCtA==;EndpointSuffix=core.windows.net"
+AZURE_STORAGE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 CONTAINER_NAME = "flask-excel-pdf"
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_STORAGE_CONNECTION_STRING)
 
